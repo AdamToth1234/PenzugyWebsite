@@ -22,13 +22,12 @@ html {
 a {
     text-decoration: none;
     color: rgb(228, 236, 236);
-
 }
 
 header {
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 999;
 }
 
 .overlay {
