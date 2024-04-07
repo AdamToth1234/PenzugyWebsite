@@ -54,6 +54,7 @@ header {
     color: black;
     font-weight: bold;
     text-transform: uppercase;
+    font-size: 1.1rem;
 }
 
 .menu-overlay li{
@@ -95,6 +96,7 @@ header {
 
 .logo {
     margin: 10px;
+    cursor: pointer;
 }
 
 .split {
@@ -116,7 +118,7 @@ header {
 }
 
 .menu li {
-    padding: 30px;
+    padding: 10px 30px;
     cursor: pointer;
 }
 
@@ -173,12 +175,9 @@ header {
 }
 
 .introduction .img-euro {
-    grid-area: 1 / 2 / 3 / 4;
-    place-self: center;
+    grid-area: 1 / 2 / 3 / 5;
     z-index: 0;
-    position: relative;
-    left: 5%;
-    top: 10%;
+    place-self: center;
 }
 
 .introduction .img-euro img {
@@ -239,7 +238,12 @@ header {
     font-family: var(--font-family);
     padding: 10px;
     cursor: pointer;
-    background-color: blanchedalmond;
+    background-color: rgb(255, 235, 205);
+    transition: var(--transition);
+}
+
+.more-information:hover {
+    background-color: rgb(252, 197, 173);
 }
 
 .stock-market {
@@ -285,6 +289,7 @@ footer ul {
 
 footer ul li {
     padding: 0 10px;
+    cursor: pointer;
 }
 
 footer i {
@@ -378,7 +383,7 @@ footer i {
 
 @media (max-width: 425px) {
     .crypto, .stock-market, .currency {
-        grid-template-rows: repeat(2, 470px);
+        grid-template-rows: repeat(2, 310px);
         grid-template-columns: repeat(4, 25%);
     }
 
@@ -393,5 +398,19 @@ footer i {
 
     footer ul li {
         padding: 0 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    .crypto, .stock-market, .currency {
+        grid-template-rows: repeat(2, 330px);
+        grid-template-columns: repeat(4, 25%);
+    }
+}
+
+@media (max-width: 320px) {
+    .crypto, .stock-market, .currency {
+        grid-template-rows: repeat(2, 380px);
+        grid-template-columns: repeat(4, 25%);
     }
 }
