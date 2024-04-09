@@ -10,9 +10,4 @@ router.get("/currency", (req, res) => {
 })
 
 
-// app.get("/currency-exchange", (req, res) => {
-//     fetch
-// })
-
-
 module.exports = router

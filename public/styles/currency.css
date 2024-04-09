@@ -36,7 +36,7 @@
 .input-result {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .input-result * {
@@ -50,28 +50,28 @@
     margin-bottom: 10px;
 }
 
-form {
+.form {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
 
 }
 
-form button {
+.form button {
     font-family: "Josefin Sans";
     cursor: pointer;
 }
 
-.exception {
+.checkbox-click {
     display: none;
 }
 
-.exception-div {
+.checkbox-click-on {
     display: flex;
     flex-direction: column;
 }
 
-.exception-div *:not(:last-child){
+.checkbox-click-on *:not(:last-child){
     margin-bottom: 20px;
 }
 
@@ -82,6 +82,20 @@ form button {
   
 ::-ms-input-placeholder {
     font-family: "Josefin Sans";
+}
+
+.result button {
+    width: 100%;
+    cursor: pointer;
+    font-family: "Josefin Sans";
+}
+
+.result-text .result-text-span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 2px solid black;
 }
 
 
@@ -113,6 +127,7 @@ form button {
 
     .input-result {
         flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -147,7 +162,7 @@ form button {
 
 
 
-    form *, .exception-div * {
+    .form *, .exception-div * {
         padding: 4px;
     }
 }

@@ -73,28 +73,25 @@
                 </p>
             </div>
         </section>
-            <section class="exchange">
-                <p class="big-text" style="margin: 0; text-align: center; padding-top: 15px; margin-bottom: 10px;">Valuta API</p>
-                <div class="input-result">
-                    <div class="inputs">
-                        <form action="/currency-exchange" method="GET">
-                            <input type="text" placeholder="Az ország valutakódja" id="exchange-code">
-                            <div>
-                                <input type="checkbox" name="checkbox" id="checkbox">
-                                <label for="checkbox">Valutaváltás opció igénybevétele</label>
-                            </div>
-                            <div class="exception" id="exception">
-                                <input type="text" placeholder="A másik ország valutakódja">
-                                <input type="number" placeholder="Mennyit akarsz átváltani?">
-                            </div>
-                            <button>Lekérdezés</button>
-                        </form>
-                    </div>
-                    <div class="result">
-                        
+        <section class="exchange">
+            <p class="big-text" style="margin: 0; text-align: center; padding-top: 15px; margin-bottom: 10px;">Valuta API</p>
+            <div class="input-result">
+                <div class="inputs">
+                    <div class="form">
+                        <input type="text" placeholder="Az ország valutakódja" id="exchange-code">
+                        <div>
+                            <input type="checkbox" name="checkbox" id="checkbox">
+                            <label for="checkbox">Valutaváltás opció igénybevétele</label>
+                        </div>
+                        <div class="checkbox-click" id="checkboxClickDiv">
+                            <input type="text" placeholder="A másik ország valutakódja">
+                            <input type="number" placeholder="Mennyit akarsz átváltani?">
+                        </div>
+                        <button id="query">Lekérdezés</button>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
     </main>
     <footer>
         <span><i class="fa-solid fa-copyright" style="font-size: 1.3rem;"></i> 2024 Money Business Inc. Minden jog fenntartva</span>
