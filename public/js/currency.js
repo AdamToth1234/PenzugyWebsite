@@ -2,7 +2,7 @@ const inputCheckBox = document.getElementById("checkbox")
 const queryButton = document.getElementById("query")
 const divInputResult = document.querySelector(".input-result")
 const inputExchange = document.getElementById("exchange-code")
-let index = 10
+let index = 34
 
 inputCheckBox.addEventListener("change", () => {
     const checkboxClickDiv = document.getElementById("checkboxClickDiv")
@@ -32,9 +32,17 @@ queryButton.addEventListener("click", () => {
 
             const pResult = document.createElement("p")
             pResult.innerHTML = "Az értékek"
+            pResult.style.textAlign = "center"
+            pResult.style.fontSize = "2rem"
 
             const divResultText = document.createElement("div")
             divResultText.classList.add("result-text")
+
+            const divResultTextDiv = document.createElement("div")
+            divResultTextDiv.classList.add("result-text-div")
+
+
+            divResultText.appendChild(divResultTextDiv)
 
 
             divResult.appendChild(pResult)
@@ -60,7 +68,7 @@ queryButton.addEventListener("click", () => {
                 divResultTextSpan.appendChild(spanKey)
                 divResultTextSpan.appendChild(spanValue)
 
-                divResultText.appendChild(divResultTextSpan)
+                divResultTextDiv.appendChild(divResultTextSpan)
             }
 
             
@@ -69,13 +77,13 @@ queryButton.addEventListener("click", () => {
 
             divResult.appendChild(loadMoreButton)
 
-            console.log(keys);
-            console.log(values);
-
 
             loadMoreButton.addEventListener("click", () => {
                 if (keys[169] != undefined) {
-                    for (let i = index; i < index + 10; i++) {
+                    const divResultTextDiv = document.createElement("div")
+                    divResultTextDiv.classList.add("result-text-div")
+                    divResultText.appendChild(divResultTextDiv)
+                    for (let i = index; i < index + 34; i++) {
                         const divResultTextSpan = document.createElement("div")
                         divResultTextSpan.classList.add("result-text-span")
         
@@ -91,16 +99,13 @@ queryButton.addEventListener("click", () => {
                         divResultTextSpan.appendChild(spanKey)
                         divResultTextSpan.appendChild(spanValue)
         
-                        divResultText.appendChild(divResultTextSpan)
+                        divResultTextDiv.appendChild(divResultTextSpan)
                     }
                 } else {
                     return
                 }
 
-                index += 10
-
-                console.log(keys);
-                console.log(values);
+                index += 34
             })
         })
     }

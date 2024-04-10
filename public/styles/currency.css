@@ -35,8 +35,10 @@
 
 .input-result {
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .input-result * {
@@ -90,6 +92,16 @@
     font-family: "Josefin Sans";
 }
 
+.result-text {
+    display: flex;
+    justify-content: space-around;
+}
+
+.result-text .result-text-div {
+    display: flex;
+    flex-direction: column;
+}
+
 .result-text .result-text-span {
     display: flex;
     justify-content: space-between;
@@ -98,6 +110,12 @@
     border-bottom: 2px solid black;
 }
 
+
+@media (max-width: 1105px) {
+    .result-text {
+        flex-direction: column;
+    }
+}
 
 @media (max-width: 1024px) {
     .introduction-currency {
