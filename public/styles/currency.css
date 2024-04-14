@@ -64,6 +64,10 @@
     cursor: pointer;
 }
 
+.form #clear {
+    display: none;
+}
+
 .checkbox-click {
     display: none;
 }
