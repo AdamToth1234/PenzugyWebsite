@@ -182,8 +182,6 @@
         grid-template-rows: repeat(2, 330px);
     }
 
-
-
     .form *, .exception-div * {
         padding: 4px;
     }

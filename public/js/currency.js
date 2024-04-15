@@ -146,7 +146,7 @@ queryButton.addEventListener("click", () => {
                             const spanValue = document.createElement("span")
             
                             spanKey.innerHTML = keys[i]
-                            spanValue.innerHTML = values[i]
+                            spanValue.innerHTML = Number(values[i]).toFixed(4)
             
                             delete keys[i]
                             delete values[i]
