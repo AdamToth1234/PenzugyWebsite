@@ -24,6 +24,18 @@ a {
     color: rgb(228, 236, 236);
 }
 
+.reveal {
+    display: block;
+}
+
+.reveal-flex {
+    display: flex;
+}
+
+.hide {
+    display: none;
+}
+
 header {
     position: sticky;
     top: 0;

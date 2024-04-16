@@ -16,6 +16,7 @@ hamburger.addEventListener("click", () => {
     overlay.classList.add("transform")
 })
 
+
 closeButton.addEventListener("click", () => {
     overlay.classList.remove("transform")
 })

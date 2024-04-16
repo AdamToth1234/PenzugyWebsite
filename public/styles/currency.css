@@ -64,11 +64,7 @@
     cursor: pointer;
 }
 
-.form #clear {
-    display: none;
-}
-
-.checkbox-click {
+.form .clear, .checkbox-click {
     display: none;
 }
 

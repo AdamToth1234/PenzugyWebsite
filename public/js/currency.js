@@ -1,5 +1,5 @@
 const inputCheckBox = document.getElementById("checkbox")
-const queryButton = document.getElementById("query")
+const queryButton = document.querySelector("button")
 const divInputResult = document.querySelector(".input-result")
 const inputExchange = document.getElementById("exchange-code")
 const clearBtn = document.getElementById("clear")
@@ -13,8 +13,12 @@ inputCheckBox.addEventListener("change", () => {
 
 
 clearBtn.addEventListener("click", () => {
-    const result = document.querySelector(".result")
-    result.remove()
+    const result = document.querySelectorAll(".result")
+    for (let i of result) {
+        i.remove()
+    }
+    clearBtn.classList.remove("reveal")
+    clearBtn.classList.add("hide")
 })
 
 
@@ -36,7 +40,8 @@ queryButton.addEventListener("click", () => {
             if (result.error) {
                 alert("Hiba! Ellenőrizd az adatokat, amiket beütöttél!")
             } else {
-                clearBtn.style.display = "block"
+                clearBtn.classList.remove("hide")
+                clearBtn.classList.add("reveal")
 
                 const divResult = document.createElement("div")
                 divResult.classList.add("result")
@@ -82,7 +87,8 @@ queryButton.addEventListener("click", () => {
             if (result.error) {
                 alert("Hiba! Ellenőrizd az adatokat, amiket beütöttél!")
             } else {
-                clearBtn.style.display = "block"
+                clearBtn.classList.remove("hide")
+                clearBtn.classList.add("reveal")
 
                 const divResult = document.createElement("div")
                 divResult.classList.add("result")
