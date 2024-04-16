@@ -71,8 +71,6 @@ button.addEventListener("click", () => {
     
                 let keys = Object.keys(response.message)
                 let values = Object.values(response.message)
-                console.log(response.message);
-    
     
                 for (let i = 0; i < keys.length; i++) {
                     const divResultTextSpan = document.createElement("div")
