@@ -2,6 +2,35 @@ const button = document.querySelector("button")
 const inputTickerSymbol = document.getElementById("stock")
 const divInputResult = document.querySelector(".input-result")
 const clearBtn = document.getElementById("clear")
+const searchInput = document.getElementById("search")
+
+
+searchInput.addEventListener("input", () => {
+    const hideTextSpan = document.querySelectorAll(".hide")
+
+    if (searchInput.value == "") {
+        for (let i of hideTextSpan) {
+            i.classList.remove("hide")
+            i.classList.add("result-text-span")
+        }
+    } else {
+        for (let i of hideTextSpan) {
+            i.classList.remove("hide")
+            i.classList.add("result-text-span")
+        }
+
+        const resultTextSpan = document.querySelectorAll(".result-text-span")
+        let trimmedInput = searchInput.value.replace(/\s+/g, "");
+
+        for (let i of resultTextSpan) {
+            let currencyCode = i.children[0].innerHTML.substring(0, trimmedInput.length)
+            if (currencyCode != trimmedInput.toUpperCase()) {
+                i.classList.remove("result-text-span")
+                i.classList.add("hide")
+            }
+        }
+    }
+})
 
 
 clearBtn.addEventListener("click", () => {
@@ -11,6 +40,9 @@ clearBtn.addEventListener("click", () => {
     }
     clearBtn.classList.remove("reveal")
     clearBtn.classList.add("hide")
+
+    searchInput.classList.remove("reveal")
+    searchInput.classList.add("hide")
 })
 
 
@@ -26,9 +58,11 @@ button.addEventListener("click", () => {
         body: JSON.stringify({
             input: splittedInput,
         })
-    }).then(res => {
+    })
+    .then(res => {
         return res.json()
-    }).then(response => {
+    })
+    .then(response => {
         if (Object.keys(response.message).includes("message")) {
             for (let i of Object.values(response)) {
                 if (i.message) {
@@ -48,6 +82,9 @@ button.addEventListener("click", () => {
             if (!problem) {
                 clearBtn.classList.remove("hide")
                 clearBtn.classList.add("reveal")
+
+                searchInput.classList.remove("hide")
+                searchInput.classList.add("reveal")
     
                 const divResult = document.createElement("div")
                 divResult.classList.add("result")
@@ -81,10 +118,10 @@ button.addEventListener("click", () => {
     
                     if (keys.length == 1) {
                         spanKey.innerHTML = inputTickerSymbol.value.toUpperCase()
-                        spanValue.innerHTML = `$${Number(values[0]).toFixed(2)}`
+                        spanValue.innerHTML = `${Number(values[0]).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}`
                     } else {
                         spanKey.innerHTML = keys[i].toUpperCase()
-                        spanValue.innerHTML = `$${Number(values[i]["price"]).toFixed(2)}`
+                        spanValue.innerHTML = `${Number(values[i]["price"]).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}`
                     }
     
     

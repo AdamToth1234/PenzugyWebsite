@@ -28,10 +28,6 @@ a {
     display: block;
 }
 
-.reveal-flex {
-    display: flex;
-}
-
 .hide {
     display: none;
 }

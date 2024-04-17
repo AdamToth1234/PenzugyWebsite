@@ -3,7 +3,37 @@ const queryButton = document.querySelector("button")
 const divInputResult = document.querySelector(".input-result")
 const inputExchange = document.getElementById("exchange-code")
 const clearBtn = document.getElementById("clear")
+const searchInput = document.getElementById("search")
 let index = 34
+
+
+searchInput.addEventListener("input", () => {
+    const hideTextSpan = document.querySelectorAll(".hide")
+
+    if (searchInput.value == "") {
+        for (let i of hideTextSpan) {
+            i.classList.remove("hide")
+            i.classList.add("result-text-span")
+        }
+    } else {
+        for (let i of hideTextSpan) {
+            i.classList.remove("hide")
+            i.classList.add("result-text-span")
+        }
+
+        const resultTextSpan = document.querySelectorAll(".result-text-span")
+        let trimmedInput = searchInput.value.replace(/\s+/g, "");
+
+        for (let i of resultTextSpan) {
+            let currencyCode = i.children[0].innerHTML.substring(0, trimmedInput.length)
+            if (currencyCode != trimmedInput.toUpperCase()) {
+                i.classList.remove("result-text-span")
+                i.classList.add("hide")
+            }
+        }
+    }
+})
+
 
 inputCheckBox.addEventListener("change", () => {
     const checkboxClickDiv = document.getElementById("checkboxClickDiv")
@@ -19,6 +49,9 @@ clearBtn.addEventListener("click", () => {
     }
     clearBtn.classList.remove("reveal")
     clearBtn.classList.add("hide")
+
+    searchInput.classList.remove("reveal")
+    searchInput.classList.add("hide")
 })
 
 
@@ -71,7 +104,7 @@ queryButton.addEventListener("click", () => {
                 const spanValue = document.createElement("span")
 
                 spanKey.innerHTML = result.query.to
-                spanValue.innerHTML = Number(result.result).toFixed(4)
+                spanValue.innerHTML = Number(result.result.toFixed(4)).toLocaleString('hu-HU')
 
 
                 divResultTextSpan.appendChild(spanKey)
@@ -89,6 +122,9 @@ queryButton.addEventListener("click", () => {
             } else {
                 clearBtn.classList.remove("hide")
                 clearBtn.classList.add("reveal")
+
+                searchInput.classList.remove("hide")
+                searchInput.classList.add("reveal")
 
                 const divResult = document.createElement("div")
                 divResult.classList.add("result")
@@ -152,7 +188,7 @@ queryButton.addEventListener("click", () => {
                             const spanValue = document.createElement("span")
             
                             spanKey.innerHTML = keys[i]
-                            spanValue.innerHTML = Number(values[i]).toFixed(4)
+                            spanValue.innerHTML = Number(values[i]).toLocaleString('hu-HU')
             
                             delete keys[i]
                             delete values[i]
