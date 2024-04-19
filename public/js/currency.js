@@ -57,7 +57,7 @@ clearBtn.addEventListener("click", () => {
 
 queryButton.addEventListener("click", () => {
     var myHeaders = new Headers();
-    myHeaders.append("apikey", "rzW1BJ4Q5W2dftGrNBqfiWpkSPdCOyAc");
+    myHeaders.append("apikey", "An9fHXnm4tgyr6d2Yj3hwZh1H1qT1IT2");
 
     var requestOptions = {
         method: 'GET',
